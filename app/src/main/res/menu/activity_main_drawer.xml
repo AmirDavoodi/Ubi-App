@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_padlock"
+            app:actionLayout="@layout/unlock_layout"
+            android:title="Unlock" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_user"
+            android:title="Account" />
+
+    </group>
+
+
+
+    <group android:id="@+id/grp2" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home2"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+    </group>
+
+    <group android:id="@+id/grp3" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notification"
+            app:actionLayout="@layout/notify_layout"
+            android:title="Notifications" />
+
+    </group>
+    <group android:id="@+id/grp4" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_Logout"
+            android:icon="@drawable/ic_turn_off"
+            android:title="Quit" />
+
+    </group>
+    <!--<item android:title="">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_home"-->
+                <!--android:icon="@drawable/ic_home2"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_setting"-->
+                <!--android:icon="@drawable/ic_settings"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

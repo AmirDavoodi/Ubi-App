@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_outer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    card_view:cardBackgroundColor="@android:color/transparent"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="3dp"
+    android:layout_margin="5dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_viewRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="true"
+        card_view:cardPreventCornerOverlap="false"
+        >
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/Ly_icons"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_below="@id/iv_heart_rate"
+                android:gravity="center"
+                android:text="135 Bpm"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+
+
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_below="@id/iv_respiratory"
+                android:gravity="center"
+                android:text="rate:20"
+                android:textSize="10sp" />
+
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_below="@id/iv_BO2"
+                android:gravity="center"
+                android:text="95mm Hg"
+                android:textSize="10sp" />
+
+
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_below="@id/iv_posture"
+                android:gravity="center"
+                android:text="one two three four five six seven eight nine ten"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.v7.widget.CardView>

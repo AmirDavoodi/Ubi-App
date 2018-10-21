@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:subtitleTextColor="@color/white"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/white"
+
+            >
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/Ly_detail"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/purple">
+            <ImageView
+                android:id="@+id/iv_user_img_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_man_user"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+               />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/iv_user_img_profile"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user_img_profile"
+                app:layout_constraintLeft_toRightOf="@id/iv_user_img_profile"
+                android:background="@color/palegreen"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Patient: Luigi Di Maio"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number: +410760205589"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/edit"
+                    android:text="Edit Profile"/>
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/user_title_history_event_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last Events:"
+            android:layout_below="@id/Ly_detail"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/user_history_event_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/user_title_history_event_recycler_view"
+             />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/user_sign_event_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_history_event_recycler_view"
+            android:background="@color/green"
+
+            />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+</ScrollView>
+
+

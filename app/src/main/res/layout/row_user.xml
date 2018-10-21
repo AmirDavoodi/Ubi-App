@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="1dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_viewRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        card_view:cardPreventCornerOverlap="false"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <FrameLayout
+        android:background="@drawable/border_card_view_selector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/light_gray"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_user_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_man_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/Ly_heart_rate"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@color/green">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_like"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tv_title_transaction_repo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="123" />
+            </RelativeLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_name_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="aria stark"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@+id/iv_user_image" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

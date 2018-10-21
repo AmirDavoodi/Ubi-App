@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="1dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_viewRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        card_view:cardPreventCornerOverlap="false"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:background="@drawable/border_card_view_selector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+            <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
+               >
+
+
+                <ImageView
+                    android:id="@+id/iv_user_image"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_man_user" />
+            <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/iv_user_image"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View 1"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_device"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View 2"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@id/tv_name" />
+
+
+                <com.warkiz.widget.IndicatorSeekBar
+                    android:id="@+id/nane2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/palegreen"
+                    app:isb_indicator_color="@color/red"
+                    app:isb_indicator_text_size="10sp"
+                    app:isb_max="100"
+                    app:isb_min="0"
+                    app:isb_seek_smoothly="true"
+                    app:isb_show_indicator="rounded_rectangle"
+                    app:isb_thumb_color="@color/purple"
+                    app:isb_tick_texts_color="@color/blue"
+                    app:isb_track_background_color="@color/light_gray"
+                    app:isb_track_progress_color="@color/dark_gray_s"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@id/tv_device" />
+
+                <TextView
+                    android:id="@+id/view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View 3"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toRightOf="@id/nane2" />
+                <!--<TextView-->
+                    <!--android:id="@+id/nane"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:layout_constraintHorizontal_weight="4"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--android:text="Amir"-->
+                     <!--/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/nane1"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:layout_constraintHorizontal_weight="4"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/nane"-->
+                    <!--android:text="Amir"-->
+                    <!--/>-->
+
+                <!--<com.warkiz.widget.IndicatorSeekBar-->
+                    <!--android:id="@+id/nane2"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@color/palegreen"-->
+                    <!--app:isb_indicator_color="@color/red"-->
+                    <!--app:isb_indicator_text_size="10sp"-->
+                    <!--app:isb_max="100"-->
+                    <!--app:isb_min="0"-->
+                    <!--app:isb_seek_smoothly="true"-->
+                    <!--app:isb_show_indicator="rounded_rectangle"-->
+                    <!--app:isb_thumb_color="@color/purple"-->
+                    <!--app:isb_tick_texts_color="@color/blue"-->
+                    <!--app:isb_track_background_color="@color/light_gray"-->
+                    <!--app:isb_track_progress_color="@color/dark_gray_s"-->
+                    <!--app:layout_constraintHorizontal_weight="4"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/nane1" />-->
+                <!--<TextView-->
+                    <!--android:id="@+id/nane3"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:layout_constraintHorizontal_weight="1"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/nane2"-->
+                    <!--android:text="Amir"-->
+                    <!--/>-->
+            </android.support.constraint.ConstraintLayout>
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/Ly_heart_rate"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:layout_constraintTop_toTopOf="@id/iv_user_image"-->
+                    <!--app:layout_constraintLeft_toRightOf="@id/iv_user_image"-->
+                    <!--app:layout_constraintBottom_toBottomOf="@id/iv_user_image"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="4">-->
+
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_name"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:gravity="left|center"-->
+                        <!--android:background="@color/red"-->
+                        <!--android:text="Amir" />-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_device"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:gravity="left|center"-->
+                        <!--android:background="@color/green"-->
+                        <!--android:text="UBI1083" />-->
+                    <!--&lt;!&ndash;<SeekBar&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;android:id="@+id/tv_monitoring_seekbar"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_weight="2"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="left|center"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_centerVertical="true"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:minHeight="1dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:maxHeight="1dp"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:max="200"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:progress="50"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:progressDrawable="@drawable/seekbar_style"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:thumb="@drawable/custom_thumb"&ndash;&gt;-->
+                        <!--&lt;!&ndash;/>&ndash;&gt;-->
+                    <!--<com.warkiz.widget.IndicatorSeekBar-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_weight="1"-->
+                        <!--app:isb_indicator_color="@color/red"-->
+                        <!--app:isb_indicator_text_size="10sp"-->
+                        <!--app:isb_max="100"-->
+                        <!--app:isb_min="0"-->
+                        <!--app:isb_seek_smoothly="true"-->
+                        <!--app:isb_show_indicator="rounded_rectangle"-->
+                        <!--app:isb_thumb_color="@color/purple"-->
+                        <!--app:isb_tick_texts_color="@color/blue"-->
+                        <!--app:isb_track_background_color="@color/light_gray"-->
+                        <!--app:isb_track_progress_color="@color/dark_gray_s"-->
+                        <!--android:background="@color/palegreen"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_notification"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_margin="2dp"-->
+                        <!--android:background="@color/green"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:text="3" />-->
+                <!--</LinearLayout>-->
+
+
+            </android.support.constraint.ConstraintLayout>
+            <!--<TextView-->
+                <!--android:id="@+id/tv_name_user"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="aria stark"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:gravity="center"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintRight_toRightOf="parent"-->
+                <!--android:background="@color/gray"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/iv_user_image" />-->
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

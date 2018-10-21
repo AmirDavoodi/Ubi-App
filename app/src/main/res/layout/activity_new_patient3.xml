@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:background="@color/white"
+    android:layout_height="match_parent"
+    app:theme="@style/fabTheme">
+    <!--<android.support.v4.widget.DrawerLayout-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/drawer_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_above="@+id/Ly_bottom">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/Ly_bottom"
+
+        >
+
+        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorAccent3"
+                    app:theme="@style/ToolbarColoredBackArrow"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:layout_gravity="left"
+                        android:id="@+id/toolbar_title" />
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.AppBarLayout>
+
+
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <FrameLayout
+            android:id="@+id/container_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:card_view="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                >
+
+                <LinearLayout
+                    android:id="@+id/Ly_user_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal"
+                    >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_img"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/nav_header_desc"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    android:src="@drawable/dot"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/dark_gray_s"
+                        android:text="Tap to select image profile"/>
+
+                </LinearLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_user_img"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_user_name"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/name"
+                        android:maxLength="50"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:id="@+id/Ly_gender"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColorHint="@color/gray"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/Ly_user_name"-->
+                    <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">-->
+
+
+                    <!--&lt;!&ndash;style="@style/SpinnerTheme"&ndash;&gt;-->
+                    <!--<Spinner-->
+                        <!--android:id="@+id/tv_gender"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="20dp"-->
+                        <!--android:layout_marginRight="20dp"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:entries="@array/gender_arrays"/>-->
+
+                <!--</android.support.design.widget.TextInputLayout>-->
+
+                <Spinner
+
+                    android:id="@+id/tv_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Ly_user_name"
+                    android:popupBackground="@color/white"
+               android:layout_margin="10dp"
+                android:textSize="12sp"
+                    android:entries="@array/gender_arrays"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_gender"
+                    android:focusableInTouchMode="false"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_birthday"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/user_birthdate"
+                        android:maxLength="50"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_user_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_birthday"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_user_address"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/address"
+                        android:maxLength="50"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_user_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_user_address"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_user_phone"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/phone"
+                        android:maxLength="50"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_user_insurance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_user_address"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_user_insurance"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/user_insurance_name"
+                        android:maxLength="50"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_user_company_insurance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_user_insurance"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_user_company_insurance"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/user_company_insurance"
+                        android:maxLength="50"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ly_user_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/gray"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_user_company_insurance"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_add_patient"
+                    app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout1">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/tv_user_condition"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/input_border_bottom"
+                        android:cursorVisible="true"
+                        android:gravity="center|left|bottom"
+                        android:hint="@string/user_condition"
+                        android:maxLength="80"
+                        android:scrollHorizontally="true"
+                        android:inputType="textMultiLine"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"/>
+
+                </android.support.design.widget.TextInputLayout>
+                <!--<android.support.v7.widget.AppCompatEditText-->
+                    <!--android:id="@+id/tv_user_condition"-->
+                    <!--style="@style/TextStyle"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="73dp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:background="@drawable/input_border_bottom"-->
+                    <!--android:cursorVisible="true"-->
+                    <!--android:gravity="top|left"-->
+                    <!--android:hint="@string/user_condition"-->
+                    <!--android:inputType="textMultiLine"-->
+                    <!--android:maxLength="80"-->
+                    <!--android:paddingBottom="10dp"-->
+                    <!--android:scrollHorizontally="true"-->
+                    <!--android:textColor="@color/gray"-->
+                    <!--android:textSize="12sp"-->
+                    <!--app:layout_constraintBottom_toTopOf="@+id/btn_add_device"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/Ly_user_company_insurance" />-->
+
+                <Button
+                    style="@style/Button.Primary"
+                    android:id="@+id/btn_add_patient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@color/red"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <!--<android.support.design.widget.FloatingActionButton-->
+                    <!--android:id="@+id/fab"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="bottom|end"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintRight_toRightOf="parent"-->
+                    <!--android:layout_margin="@dimen/fab_margin"-->
+                    <!--android:src="@drawable/add3"-->
+                    <!--android:scaleType="centerInside"-->
+                    <!--app:backgroundTint="@color/red"-->
+                    <!--app:borderWidth="0dp"-->
+                    <!--app:elevation="6dp"-->
+                    <!--app:fabSize="normal"/>-->
+
+                <RelativeLayout
+                    xmlns:fab="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:visibility="gone"
+                    android:paddingTop="@dimen/activity_vertical_margin">
+
+                    <com.github.clans.fab.FloatingActionMenu
+                        android:id="@+id/FloatingActionMenu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        fab:menu_icon="@drawable/fab_add"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        fab:menu_labels_style="@style/MenuLabelsStyle"
+                        fab:menu_labels_showAnimation="@anim/jump_from_down"
+                        fab:menu_labels_hideAnimation="@anim/jump_to_down"
+                        fab:menu_animationDelayPerItem="0"
+                        fab:menu_shadowColor="#444"
+                        fab:fab_colorNormal="@color/red"
+                        fab:fab_colorPressed="@color/yellow"
+                        fab:fab_colorRipple="@color/green"
+                      >
+
+                        <com.github.clans.fab.FloatingActionButton
+                            android:id="@+id/subFloatingMenu1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pendrive"
+                            fab:fab_label="Sub Menu Item 1"
+                            fab:fab_size="mini" />
+
+                        <com.github.clans.fab.FloatingActionButton
+                            android:id="@+id/subFloatingMenu2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/add_user1"
+                            fab:fab_label="Sub Menu Item 2"
+                            fab:fab_size="mini" />
+
+                    </com.github.clans.fab.FloatingActionMenu>
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
+
+    <!--<android.support.design.widget.NavigationView-->
+    <!--android:id="@+id/navigation_view"-->
+    <!--style="@style/Widget.Design.NavigationView"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="start"-->
+    <!--android:background="@color/white"-->
+    <!--app:headerLayout="@layout/drawer_header"-->
+    <!--app:itemBackground="@color/white"-->
+    <!--app:itemIconTint="@color/black_effective"-->
+    <!--app:itemTextColor="@color/black_effective"-->
+    <!--app:menu="@menu/drawer">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_app_version"-->
+    <!--style="@style/TextStyle.Title.Sub"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:padding="5dp" />-->
+    <!--</android.support.design.widget.NavigationView>-->
+
+
+    <!--</android.support.v4.widget.DrawerLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/Ly_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true">
+
+        </FrameLayout>
+
+        <!-- Bottom Navigation Layout-->
+        <LinearLayout
+            android:id="@+id/layout_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true">
+
+            <!-- Top Border -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/bottom_nav_selector">
+
+            </View>
+
+            <!-- BottomNavigationView -->
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                app:elevation="16dp"
+                app:itemBackground="@color/white"
+                android:foreground="?attr/selectableItemBackground"
+                app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+                app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+
+                app:menu="@menu/navigation" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

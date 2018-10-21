@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".MainActivity">
+
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/colorPrimary"
+                        />
+
+                </android.support.design.widget.AppBarLayout>
+
+
+
+            </android.support.design.widget.CoordinatorLayout>
+
+            <FrameLayout
+                android:id="@+id/container_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:card_view="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <View
+                        android:id="@+id/v_first_sep"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@drawable/gradient_line"
+                        />
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_user_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/user_silhouette"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/green" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_user_image"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_name"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/name"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <!--<EditText-->
+                    <!--android:id="@+id/tv_user_name"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="Name:"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/iv_user_image"-->
+                    <!--android:background="@color/transparent"/>-->
+                    <View
+                        android:id="@+id/v1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_name"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v1"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <Spinner
+                            android:id="@+id/tv_gender"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:entries="@array/gender_arrays"
+                            android:gravity="center|left|bottom"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:id="@+id/v2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_gender"/>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_birthdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v2"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_birthdate"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_birthdate"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <View
+                        android:id="@+id/v3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_birthdate"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_avs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v3"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_avs"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_insurance_name"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:id="@+id/v4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_avs"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v3"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_address"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/address"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/tv_user_birthdate"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="birth_date:"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/v4"-->
+                    <!--android:background="@color/transparent"/>-->
+                    <View
+                        android:id="@+id/v5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_address"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v5"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_phone"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/phone"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/tv_user_phone"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="phone:"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/v5"-->
+                    <!--android:background="@color/transparent"/>-->
+
+
+                    <View
+                        android:id="@+id/v6"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_phone"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_insurance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v6"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_insurance"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_insurance_name"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/tv_insurance"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="insurance:"-->
+                    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@id/v6"-->
+                    <!--android:background="@color/transparent"/>-->
+
+                    <View
+                        android:id="@+id/v7"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_insurance"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_company_insurance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v6"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_company_insurance"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_insurance_name"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:id="@+id/v8"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_company_insurance"/>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_natinal_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v8"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_natinal_code"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_company_insurance"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:id="@+id/v9"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_natinal_code"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_reasons_visit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v9"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_reasons_visit"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_reasons_visit"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+                    <View
+                        android:id="@+id/v10"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:visibility="invisible"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_reasons_visit"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v10"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_condition"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_condition"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <View
+                        android:id="@+id/v11"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_condition"/>
+
+                    <!-- Spinner Element -->
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v11"
+                        android:prompt="@string/spinner_title"
+                        android:entries="@array/device_arrays"
+                        />
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/Ly_user_condition1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/gray"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v10"
+                        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/tv_user_condition1"
+                            style="@style/TextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/input_border_bottom"
+                            android:cursorVisible="true"
+                            android:gravity="center|left|bottom"
+                            android:hint="@string/user_condition"
+                            android:maxLength="50"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/black_effective"
+                            android:textSize="18sp"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <Button
+                        style="@style/Button.Primary"
+                        android:id="@+id/btn_add_patient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Ly_user_condition1"
+                        android:text="@string/add_new_device"
+                        android:layout_margin="5dp"
+                        />
+
+
+
+                </android.support.constraint.ConstraintLayout>
+                </ScrollView>
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/Ly_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true">
+
+        </FrameLayout>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/red"
+            app:itemBackground="@color/red"
+            android:foreground="?attr/selectableItemBackground"
+            app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+            app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+            app:menu="@menu/navigation" />
+
+    </RelativeLayout>
+</RelativeLayout>
+

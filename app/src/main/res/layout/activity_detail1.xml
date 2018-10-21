@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                app:subtitleTextColor="@color/white"
+                app:title="@string/app_name"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:titleTextColor="@color/white"
+
+                >
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/Ly_detail"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_img_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unknown"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="5dp"
+                    />
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_user_img_profile"
+                    android:text="@string/name"
+                   />
+                <TextView
+                    android:id="@+id/tv_user_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+                    android:text="@string/device"
+                    />
+                <LinearLayout
+                    android:id="@+id/Ly_more_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_user_device"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:orientation="vertical"
+                    android:background="@color/red1"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reasons visiting dr: Luigi Di Maio"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient general condition: asprine taken"/>
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/Ly_icons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_more_info"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorPrimary2"
+                    android:weightSum="6"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/Ly_heart_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_medicine"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_heart_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_heartbeat"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:id="@+id/tv_heart_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_heart_rate"
+                            android:text="135 Bpm"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            />
+                    </RelativeLayout>
+                    <View
+                        android:id="@+id/v_line_separate_vertical"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s" />
+
+                    <RelativeLayout
+                        android:id="@+id/Ly_heart_rate_v"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_medicine"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_heart_rate_v"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_hrv"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:id="@+id/tv_heart_rate_v"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_heart_rate_v"
+                            android:text="100 hrv"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            />
+                    </RelativeLayout>
+                    <View
+                        android:id="@+id/v_line_separate_vertical6"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s" />
+
+                    <RelativeLayout
+                        android:id="@+id/Ly_respiratory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_medicine"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_respiratory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_lungs"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:id="@+id/tv_respiratory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_respiratory"
+                            android:text="rate:20"
+                            android:textSize="10sp"
+                            />
+                    </RelativeLayout>
+                    <View
+                        android:id="@+id/v_line_separate_vertical1"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s" />
+                    <RelativeLayout
+                        android:id="@+id/Ly_BO2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_medicine"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_BO2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_thermometer"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:id="@+id/tv_BO2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_BO2"
+                            android:text="95mm Hg"
+                            android:textSize="10sp"
+                            />
+                    </RelativeLayout>
+                    <View
+                        android:id="@+id/v_line_separate_vertical2"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s" />
+
+                    <RelativeLayout
+                        android:id="@+id/Ly_posture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_medicine"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_posture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_standing_man"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:id="@+id/tv_posture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_posture"
+                            android:text="standing"
+                            android:textSize="10sp"
+                            />
+                    </RelativeLayout>
+                    <View
+                        android:id="@+id/v_line_separate_vertical3"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/dark_gray_s" />
+                    <RelativeLayout
+                        android:id="@+id/Ly_steps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_medicine"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iv_steps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_footsteps_silhouette_variant"
+                            android:layout_centerHorizontal="true"
+                            />
+                        <TextView
+                            android:id="@+id/tv_steps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_steps"
+                            android:text="9000"
+                            android:textSize="10sp"
+                            />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Ly_signal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Ly_icons"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp"
+                    >
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_title_signal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/title_signal"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:background="@color/colorPrimary1"-->
+                        <!--/>-->
+
+                    <com.lid.lib.LabelTextView
+                        android:id="@+id/tv_title_signal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/colorPrimary1"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="Show ECG Signal"
+                        android:textColor="#ffffff"
+                        app:label_backgroundColor="@color/red"
+                        app:label_distance="15dp"
+                        app:label_orientation="LEFT_TOP"
+                        app:label_text="Click!"
+                        app:label_textSize="10sp" />
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iv_pic_signal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:src="@drawable/images"-->
+                        <!--/>-->
+                    <!--<com.example.a.ubi.graph.LineGraph-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="100dp"-->
+                        <!--android:id="@+id/graph"/>-->
+                </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/card_event_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Ly_signal"
+                    android:scrollbars="vertical"
+                    android:layout_margin="10dp"
+                    />
+            </android.support.constraint.ConstraintLayout>
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+

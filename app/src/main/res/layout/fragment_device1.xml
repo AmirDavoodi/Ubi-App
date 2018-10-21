@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_name"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+    <!--android:id="@+id/lbl_your_name"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Enter user name" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/username"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:imeOptions="actionDone"-->
+    <!--android:inputType="text" />-->
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Ly_device"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please add new device"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/Ly_id_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tv_header"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/et_id_device"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/input_border_bottom"
+                android:cursorVisible="true"
+                android:gravity="center|left|bottom"
+                android:hint="@string/device"
+                android:maxLength="50"
+                android:paddingBottom="10dp"
+                android:textColor="@color/black_effective"
+                android:textSize="18sp"/>
+
+        </android.support.design.widget.TextInputLayout>
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/Ly_order_date"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColorHint="@color/gray"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/Ly_id_device"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">-->
+
+        <!--<android.support.design.widget.TextInputEditText-->
+        <!--android:id="@+id/et_order_date"-->
+        <!--style="@style/TextStyle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:background="@drawable/input_border_bottom"-->
+        <!--android:cursorVisible="true"-->
+        <!--android:gravity="center|left|bottom"-->
+        <!--android:hint="@string/order_date"-->
+        <!--android:inputType="textEmailAddress"-->
+        <!--android:maxLength="50"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:textColor="@color/black_effective"-->
+        <!--android:textSize="18sp"/>-->
+
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <TextView
+            android:id="@+id/tv_order_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2018"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_id_device"
+            />
+
+        <TextView
+            android:id="@+id/tv_expire_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2019"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_date"
+            />
+
+        <RelativeLayout
+            android:id="@+id/Ly_heart_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_expire_date">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_heart_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_heartbeat"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heart rate"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/iv_heart_rate"
+                android:layout_alignRight="@+id/tv_heart_rate"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/tv_heart_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                app:theme="@style/CheckboxStyle"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Ly_heart_rate_v"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_heart_rate">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_heart_rate_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_hrv"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="heart rate variability"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/iv_heart_rate_v"
+                android:layout_alignRight="@+id/tv_heart_rate_v"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/tv_heart_rate_v"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                app:theme="@style/CheckboxStyle"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Ly_respiratory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_heart_rate_v">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_respiratory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_lungs"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="respiration rate"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/iv_respiratory"
+                android:layout_alignRight="@+id/tv_respiratory"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/tv_respiratory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                app:theme="@style/CheckboxStyle"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Ly_BO2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_respiratory">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_BO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_thermometer"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="temperature"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/iv_BO2"
+                android:layout_alignRight="@+id/tv_BO2"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/tv_BO2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                app:theme="@style/CheckboxStyle"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Ly_posture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_BO2">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_posture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_standing_man"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="posture"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/iv_posture"
+                android:layout_alignRight="@+id/tv_posture"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/tv_posture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                app:theme="@style/CheckboxStyle"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Ly_steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_posture">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/iv_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_footsteps_silhouette_variant"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steps"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignLeft="@+id/iv_steps"
+                android:layout_alignRight="@+id/tv_steps"/>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/tv_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                app:theme="@style/CheckboxStyle"
+                />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/Ly_icons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Ly_id_device"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:visibility="gone"
+            >
+
+
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/Ly_respiratory"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/tv_medicine"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:id="@+id/iv_respiratory"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:srcCompat="@drawable/ic_lungs"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--/>-->
+                <!--<CheckBox-->
+                    <!--android:id="@+id/tv_respiratory"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/iv_respiratory"-->
+                    <!--android:textSize="10sp"-->
+                    <!--/>-->
+            <!--</RelativeLayout>-->
+            <View
+                android:id="@+id/v_line_separate_vertical1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@color/dark_gray_s" />
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/Ly_BO2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/tv_medicine"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:id="@+id/iv_BO2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:srcCompat="@drawable/ic_drop_silhouette"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--/>-->
+                <!--<CheckBox-->
+                    <!--android:id="@+id/tv_BO2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/iv_BO2"-->
+                    <!--android:textSize="10sp"-->
+                    <!--/>-->
+            <!--</RelativeLayout>-->
+            <View
+                android:id="@+id/v_line_separate_vertical2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@color/dark_gray_s" />
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/Ly_posture"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/tv_medicine"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:id="@+id/iv_posture"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:srcCompat="@drawable/ic_standing_man"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--/>-->
+                <!--<CheckBox-->
+                    <!--android:id="@+id/tv_posture"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/iv_posture"-->
+                    <!--android:textSize="10sp"-->
+                    <!--/>-->
+            <!--</RelativeLayout>-->
+            <View
+                android:id="@+id/v_line_separate_vertical3"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@color/dark_gray_s" />
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/Ly_steps"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@id/tv_medicine"-->
+                <!--android:layout_margin="5dp"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:id="@+id/iv_steps"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:srcCompat="@drawable/ic_footsteps_silhouette_variant"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--/>-->
+                <!--<CheckBox-->
+                    <!--android:id="@+id/tv_steps"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/iv_steps"-->
+                    <!--android:textSize="10sp"-->
+                    <!--/>-->
+            <!--</RelativeLayout>-->
+
+        </LinearLayout>
+        <Button
+            style="@style/Button.Primary"
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Ly_steps"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Order"/>
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
